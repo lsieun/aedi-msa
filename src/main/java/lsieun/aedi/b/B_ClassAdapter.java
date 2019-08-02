@@ -13,10 +13,10 @@ public class B_ClassAdapter extends ClassVisitor {
     @Override
     public MethodVisitor visitMethod(int access, String name, String descriptor, String signature, String[] exceptions) {
         MethodVisitor mv = cv.visitMethod(access, name, descriptor, signature, exceptions);
-        if (mv != null && name.equals("a") && descriptor.equals("(Ljava/lang/String;Ljava/lang/String;CICIIZ)Lcom/jetbrains/ls/responses/ObtainTicketResponse;")) {
+        if (mv != null && name.equals("a") && descriptor.equals("(ILjava/lang/String;ILjava/lang/String;IBIZ)Lcom/jetbrains/ls/responses/ObtainTicketResponse;")) {
             mv = new B_MethodAdapter_Ticket(mv);
         }
-        if (mv != null && name.equals("a") && descriptor.equals("(Ljava/lang/String;Ljava/lang/String;CCI)Lcom/jetbrains/ls/responses/PingResponse;")) {
+        if (mv != null && name.equals("a") && descriptor.equals("(BLjava/lang/String;JLjava/lang/String;)Lcom/jetbrains/ls/responses/PingResponse;")) {
             mv = new B_MethodAdapter_Ping(mv);
         }
         return mv;

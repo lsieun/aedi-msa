@@ -14,7 +14,7 @@ public class B3 {
         String jarpath = user_dir + File.separator + "lib" + File.separator + "idea.jar";
         System.out.println("file://" + jarpath);
 
-        String item = "com/jetbrains/a/a/g.class";
+        String item = "com/jetbrains/a/a/w.class";
         byte[] origin_bytes = JarUtils.readClass(jarpath, item);
         ClassReader cr = new ClassReader(origin_bytes);
 
@@ -22,7 +22,7 @@ public class B3 {
         B_ClassAdapter cv = new B_ClassAdapter(cw);
         cr.accept(cv, 0);
 
-        String className = "com.jetbrains.a.a.g";
+        String className = "com.jetbrains.a.a.w";
         byte[] bytes = cw.toByteArray();
 
         String filepath = FileUtils.getFilePath(B3.class, className);

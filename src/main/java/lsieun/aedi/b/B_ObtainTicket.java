@@ -2,12 +2,11 @@ package lsieun.aedi.b;
 
 import java.io.IOException;
 
-import com.jetbrains.a.a.u;
 import com.jetbrains.ls.responses.ObtainTicketResponse;
 import com.jetbrains.ls.responses.ResponseCode;
 
 public class B_ObtainTicket {
-    public static ObtainTicketResponse a(String var0, String var1, char var2, int var3, char var4, int var5, int var6, boolean var7) throws u, IOException {
+    public static ObtainTicketResponse a(String var0, String var1, char var2, int var3, char var4, int var5, int var6, boolean var7) throws IOException {
 
         System.out.println("Hello");
         new Exception().printStackTrace();

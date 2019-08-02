@@ -13,10 +13,10 @@ public class C_ClassAdapter extends ClassVisitor {
     @Override
     public MethodVisitor visitMethod(int access, String name, String descriptor, String signature, String[] exceptions) {
         MethodVisitor mv = cv.visitMethod(access, name, descriptor, signature, exceptions);
-        if (mv != null && name.equals("a") && descriptor.equals("(Ljava/lang/String;IICLjava/lang/String;[Lcom/jetbrains/a/a/l;)V")) {
+        if (mv != null && name.equals("a") && descriptor.equals("(Ljava/lang/String;SSILjava/lang/String;[Lcom/jetbrains/a/a/d;)V")) {
             mv = new C_MethodAdapter(mv);
         }
         return mv;
     }
-    
+
 }

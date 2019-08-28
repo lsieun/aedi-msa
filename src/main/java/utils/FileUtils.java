@@ -1,8 +1,33 @@
 package utils;
 
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class FileUtils {
+
+    public static void backup(String filepath) {
+        File file = new File(filepath);
+        if (!file.exists()) {
+            return;
+        }
+
+        String newFilePath = filepath + new SimpleDateFormat(".yyyy.MM.dd_HH.mm.ss").format(new Date()) + ".backup";
+
+        Path source = Paths.get(filepath);
+        Path target = Paths.get(newFilePath);
+        try {
+            Files.copy(source, target);
+        } catch (IOException ex) {
+            //ex.printStackTrace();
+            // swallow exception
+        }
+
+    }
+
     public static String getFilePath(String jar_path, String jar_item) {
         File file = new File(jar_path);
         File dirFile = file.getParentFile();

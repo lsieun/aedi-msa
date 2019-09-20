@@ -55,6 +55,7 @@ public class IdeaUtils {
         int count = 0;
         for (String item : list) {
             byte[] origin_bytes = JarUtils.readClass(jar_path, item);
+            if (origin_bytes == null) continue;
             ClassReader cr = new ClassReader(origin_bytes);
 
             ClassWriter cw = new ClassWriter(ClassWriter.COMPUTE_MAXS);
@@ -85,7 +86,7 @@ public class IdeaUtils {
             return;
 
         }
-        System.out.println("Go ahead and Try Step 2 and 3.");
+        System.out.println("Go ahead and Try Step 2.");
 
 //        boolean backup_success = FileUtils.backup(input_file_path);
 //        if (backup_success) {
